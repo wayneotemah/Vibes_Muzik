@@ -11,7 +11,7 @@
                 <!-- Single Catagory -->
                 {%for artist in artists %}
                 <div class="single-products-catagory clearfix">
-                    <a href="">
+                    <a href="{% url 'artist' pk=artist.pk %}">
                         <img src='{{ artist.profile.url }}' alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
