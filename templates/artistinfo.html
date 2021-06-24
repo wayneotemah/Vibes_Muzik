@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+        <!-- Header Area End -->
+{% block title %}{{artist.artistic_name}}{%endblock%}
+<!--  -->
+{% block content%}
+        <!-- Product Details Area Start -->
+        <div class="single-product-area section-padding-100 clearfix">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <div class="single_product_thumb">
+                            <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                                 <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <a class="gallery_img" href="img/product-img/pro-big-1.jpg">
+                                            <img class="d-block w-100" src="{{artist.profile.url}}" alt="First slide">
+                                        </a>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <div class="single_product_desc">
+                            <!-- Product Meta Data -->
+                            <div class="product-meta-data">
+                                <div class="line"></div>
+                                <p class="product-price">{{artist.artistic_name}}</p>
+                            </div>
+
+                            <div class="short_overview my-5">
+                                <p>{{artist.description}}</p>
+                            </div>
+
+                                <a href="{% url 'songs' pk=artist.pk %}">
+                                <button  name="addtocart" class="btn amado-btn">{{artist.artistic_name}}'s Music</button>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product Details Area End -->
+    </div>
+ {% endblock %}

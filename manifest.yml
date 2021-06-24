@@ -1,0 +1,6 @@
+---
+applications:
+- name: "greatvibes"
+  disk_quota: 1G
+  memory: 128MB
+  random-route: true

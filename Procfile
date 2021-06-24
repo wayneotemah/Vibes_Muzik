@@ -1,0 +1,1 @@
+web: gunicorn greatvibes.wsgi --log-file -
