@@ -34,22 +34,24 @@ class Song(models.Model):
     song_title = models.CharField(max_length=200)
     release_date = models.DateField()
     song_genre = models.CharField(max_length=50)
-    art_work = models.ImageField(upload_to='art_works')
+    # art_work = models.ImageField(upload_to='art_works')
     song_file = models.FileField(upload_to='music')
 
-    def save(self):
-        """
-        function to save and resize the profile piz to a 900x900 ratio
-        save the file then edit and overwrite saves file
-        """
+    # def save(self):
+    #     """
+    #     function to save and resize the profile piz to a 900x900 ratio
+    #     save the file then edit and overwrite saves file
 
-        super(Song, self).save()
-
-        img = Image.open(self.art_work.path)
-        if img.height > 300 and img.width > 300:
-            output_size = (100, 100)
-            img.thumbnail(output_size)
-            img.save(self.art_work.path)
+    # uncomment after version improvement
+    #     """
+    #
+    #     super(Song, self).save()
+    #
+    #     img = Image.open(self.art_work.path)
+    #     if img.height > 300 and img.width > 300:
+    #         output_size = (100, 100)
+    #         img.thumbnail(output_size)
+    #         img.save(self.art_work.path)
 
     def __str__(self):
         return f'{self.artist.artistic_name},{self.song_title}'

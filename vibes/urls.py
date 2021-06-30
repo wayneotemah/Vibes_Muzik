@@ -6,9 +6,9 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path(r'explore', views.explore, name='explore'),
-    path(r'songs/(?P<pk>\d+)/$', views.songs, name='songs'),
+    path(r'songs/<pk>', views.songs, name='songs'),
     path(r'contact', views.contact, name='contact'),
-    path(r'(?P<pk>\d+)/$', views.artist, name='artist'),
+    path(r'<pk>', views.artist, name='artist'),
     path(r'send_email', views.send_email, name='send_email')
 
 ]

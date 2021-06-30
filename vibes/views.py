@@ -41,20 +41,20 @@ def send_email(request):
     uncomment the below code to allow the server to send mail
     once the server has a vail domain and domailmail to send from
     """
-    # if request.method == 'POST':
-    #     subject = request.POST.get('Name', '')
-    #     message = request.POST.get('message', '')
-    #     from_email = request.POST.get('email', '')
-    #     if subject and message and from_email:
-    #         try:
-    #             send_mail(subject, message, from_email, ['wayneotemahegesa@gmail.com'])
-    #         except BadHeaderError:
-    #             return HttpResponse('Invalid header found.')
-    #         return HttpResponse('message sent.thanks')
-    #     else:
-    #         # In reality we'd use a form class
-    #         # to get proper validation errors.
-    #         return HttpResponse('Make sure all fields are entered and valid.')
-    pass
+    if request.method == 'POST':
+        subject = request.POST.get('Name', '')
+        message = request.POST.get('message', '')
+        from_email = request.POST.get('email', '')
+        if subject and message and from_email:
+            try:
+                send_mail(subject, message, from_email, ['wayneotemahegesa@gmail.com'])
+                print('sent')
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return HttpResponse('message sent.thanks')
+        else:
+            # In reality we'd use a form class
+            # to get proper validation errors.
+            return HttpResponse('Make sure all fields are entered and valid.')
 
 

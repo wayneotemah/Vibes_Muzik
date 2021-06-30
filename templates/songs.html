@@ -14,7 +14,6 @@
                             <table class="table table-responsive">
                                 <thead>
                                     <tr>
-                                        <th></th>
                                         <th>Title</th>
                                         <th>Realesed</th>
                                         <th></th>
@@ -23,20 +22,20 @@
                                 <tbody>
                                         {% for song in songs %}
                                     <tr>
-                                        <td class="cart_product_img">
-                                            <a href="#"><img src="{{song.art_work.url}}" alt="Product"></a>
-                                        </td>
+<!--                                        <td class="cart_product_img">-->
+<!--                                            <a href="#"><img src="{{song.art_work.url}}" alt="Product"></a>-->
+<!--                                        </td>-->
                                         <td class="cart_product_desc">
                                             <h5>{{song.song_title}}</h5>
                                         </td>
                                         <td class="price">
                                             <span>{{song.release_date}}</span>
                                         </td>
-<!--                                        <td class="qty">-->
-<!--                                            <div class="qty-btn d-flex">-->
-<!--                                                <p>Play</p>                                                -->
-<!--                                            </div>-->
-<!--                                        </td>-->
+                                        <td class="qty">
+                                            <div class="qty-btn d-flex">
+                                                <p>{{song.song_genre}}</p>
+                                            </div>
+                                        </td>
                                         <td class="qty">
                                             <div class="qty-btn d-flex">
                                                 <a href="{{song.song_file.url}}"><p>Download/Play</p></a>
