@@ -7,7 +7,7 @@ from .models import Artist, Song
 # Create your views here.
 def home(request):
     # landing page request and loading the artists to the page
-    artists = Artist.objects.all()
+    artists = Artist.objects.all().order_by('artistic_name')
     return render(request, 'index.html', {'artists': artists})
 
 
@@ -26,7 +26,7 @@ def artist(request, pk):
 def songs(request, pk):
     # page to display the songs
     artistic_name = Artist.objects.get(id=pk).artistic_name
-    songs = Song.objects.filter(artist=pk)
+    songs = Song.objects.filter(artist=pk).order_by('release_date')
     return render(request, 'songs.html', {'songs': songs, 'artistic_name': artistic_name})
 
 
@@ -55,6 +55,6 @@ def send_email(request):
         else:
             # In reality we'd use a form class
             # to get proper validation errors.
-            return HttpResponse('Make sure all fields are entered and valid.')
+            return HttpResponse('We are still working on this feature. PLease contact us through 0720585414')
 
 
